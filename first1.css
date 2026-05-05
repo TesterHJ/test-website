@@ -1,0 +1,266 @@
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+.slideshow {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.slideshow > img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    filter: brightness(40%);
+    opacity: 0;
+    animation: fade 16s infinite;
+}
+
+.slideshow img:nth-child(1) { animation-delay: 0s; }
+.slideshow img:nth-child(2) { animation-delay: 4s; }
+.slideshow img:nth-child(3) { animation-delay: 8s; }
+.slideshow img:nth-child(4) { animation-delay: 12s; }
+
+@keyframes fade {
+    0% { opacity: 0; }
+    5% { opacity: 1; }
+    25% { opacity: 1; }
+    30% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+.overlay-title {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 3vw;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+.ppt_icon {
+    width: 80px;
+    height: auto;
+}
+
+.ppt {
+    color: #D24726;
+    font-weight: bold;
+}
+
+.second-section {
+    height: 100vh;
+    background-image: url(img/bg2.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-text {
+    font-size: 5em;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #f0f0f0;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.sub-text {
+    font-size: 1.5em;
+    color: #f0f0f0;
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+.blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    padding: 60px;
+    background-image: url(img/bg.jpg);
+    background-size: cover;
+}
+
+.block {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.block.right {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+.block.left {
+    flex-direction: row;
+    text-align: left;
+}
+
+.overlay-block {
+    background: #aaa;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.overlay-block:hover {
+    background: rgba(40, 40, 40, 0.7);
+}
+
+.overlay-block img {
+    width: 400px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: filter 0.3s ease;
+}
+
+.overlay-block:hover img {
+    filter: brightness(40%);
+}
+
+.text-box p {
+    font-size: 1.7em;
+    font-weight: bold;
+    color: #333;
+    margin: 8px 0;
+}
+
+.overlay-block::after {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #D24726;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+    opacity: 0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.block1:hover::after { content: "Unsplash 관련 상세 보기"; }
+.block2:hover::after { content: "PPT 템플렛 관련 상세 보기"; }
+.block3:hover::after { content: "애니메이션 효과 관련 상세 보기"; }
+.block4:hover::after { content: "유튜브 영상 참조 관련 상세 보기"; }
+
+.overlay-block:hover::after {
+    opacity: 1;
+}
+
+.side-nav {
+    position: fixed;
+    top: 50%; right: 30px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.nav-line {
+    position: absolute;
+    top: 0; bottom: 0; right: -10%;
+    width: 5px;
+    background: #D24726;
+    z-index: -1;
+}
+
+.nav-dot {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.dot {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #fff;
+    transition: all 0.3s ease;
+}
+
+.nav-dot:hover .dot {
+    transform: scale(1.5);
+    background: #D24726;
+}
+
+.nav-dot:hover .label {
+    background: #D24726;
+}
+
+.label {
+    flex-shrink: 0;
+    min-width: max-content;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 1.2em;
+    opacity: 0;
+    transform: translateX(10px);
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.side-nav:hover .label {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.footer-info {
+    text-align: right;
+    padding: 20px;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    background-color: #404040;
+}
+
+@media (max-width: 1024px) {
+    .overlay-title { font-size: 4vw; }
+    .ppt_icon { width: 10vw; }
+    .overlay-block img { width: 40vw; height: auto; }
+    .main-text { font-size: 3em; }
+}
+
+@media (max-width: 768px) {
+    .overlay-title {
+        font-size: 6vw;
+    }
+    .ppt_icon { width: 15vw; margin-bottom: 10px; }
+    .blocks { padding: 20px; gap: 40px; }
+    .block { flex-direction: column !important; text-align: center; }
+    .overlay-block { flex-direction: column; gap: 10px; }
+    .overlay-block img { width: 80%; height: auto; }
+    .main-text { font-size: 2em; }
+    .sub-text { font-size: 1em; }
+    .side-nav { right: 10px; gap: 20px; }
+    .dot { width: 18px; height: 18px; }
+}

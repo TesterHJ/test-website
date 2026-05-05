@@ -1,0 +1,267 @@
+
+
+
+body {
+    margin: 0;
+    background-color: #000;
+}
+
+.start {
+    position: relative;
+    height: 100vh;
+    background: center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.start::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+}
+
+.start h1 {
+    position: relative;
+    font-size: 6em;
+    z-index: 1;
+}
+
+.content {
+    padding: 60px 20px;
+    background: #111;
+    color: #fff;
+    text-align: center;
+}
+
+.content p {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.content img { 
+    margin-top: 20px;
+    width: 400px;
+    border-radius: 12px;
+}
+
+.ppt_icon {
+    width: 20px;
+    height: auto;
+}
+
+.ppt {
+    color: #D24726;
+    font-weight: bold;
+}
+
+a {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 20px;
+    text-decoration: none; 
+    border-radius: 8px;
+    background: #333; 
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.nav {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.nav a {
+    margin: 0 10px;
+    background: #333;
+    color: #fff;
+    font-size: 1.2em;
+}
+
+.nav a:hover {
+    background: #545545;
+}
+
+.overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+    color: #fff;
+}
+
+.info {
+    font-size: 2em;
+    margin-top: 40px;
+    background: #222;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    color: #fff;
+}
+
+.info ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.info li {
+    margin-bottom: 10px;
+}
+
+.slideshow-two {
+    position: relative;
+    width: 1000px;
+    height: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.slideshow-two img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    animation: fade-two 6s infinite;
+}
+
+.slideshow-two img:nth-child(1) { animation-delay: 0s; }
+.slideshow-two img:nth-child(2) { animation-delay: 3s; }
+
+@keyframes fade-two {
+    0% { opacity: 0; }
+    5% { opacity: 1; }
+    45% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+.slideshow {
+    position: relative;
+    width: 1000px;
+    height: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.slideshow img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: fade 12s infinite;
+}
+
+.slideshow img:nth-child(1) { animation-delay: 0s; }
+.slideshow img:nth-child(2) { animation-delay: 3s; }
+.slideshow img:nth-child(3) { animation-delay: 6s; }
+.slideshow img:nth-child(4) { animation-delay: 9s; }
+
+@keyframes fade {
+    0% { opacity: 0; }
+    5% { opacity: 1; }
+    25% { opacity: 1; }
+    30% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+.aniex img{
+   width: 800px; 
+}
+
+.btn {
+    margin-top: 30px;
+    background: #333;
+    color: #ffffff;
+    font-size: 1.2em;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.sub-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.sub-nav .line {
+    width: 2px;
+    background: #aaa;
+    margin: 0 20px;
+    list-style: none;
+}
+
+.tab-area {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.menu-icon {
+    font-size: 1.5em;
+}
+
+.sub-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: #333;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.sub-nav:hover ul {
+    max-height: 200px;
+}
+
+.sub-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 12px 0;
+    transition: color 0.3s;
+}
+
+.sub-nav a:hover {
+    color: #636363
+}
+
+.sub-nav a.active {
+    color: #D24726;
+    font-weight: bold;
+    border-bottom: 2px solid #D24726;
+}
+
+.footer-info {
+    text-align: right;
+    padding: 20px;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    background-color: #404040;
+}
