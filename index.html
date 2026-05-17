@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>대학교 생활 도구 모음</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/auth.js" defer></script>
+</head>
+<body>
+  <h1>학교 관련 사이트 모음</h1>
+
+  <!-- 로그인 버튼 -->
+  <button onclick="login()">관리자 로그인</button>
+
+  <!-- 관리자 패널 (로그인 성공 시 표시) -->
+  <div id="adminPanel" style="display:none; margin-top:20px;">
+    <h2>관리자 모드</h2>
+    <p>새로운 사이트를 추가할 수 있습니다.</p>
+    <input id="siteName" placeholder="사이트 이름">
+    <input id="siteURL" placeholder="사이트 URL">
+    <button onclick="addSite()">추가</button>
+  </div>
+
+  <!-- 일반 사용자용 링크 목록 -->
+  <div id="links">
+    <h2>학교 사이트</h2>
+    <ul>
+      <li><a href="https://www.nkut.ac.kr/notice">학사 공지사항</a></li>
+      <li><a href="https://www.nkut.ac.kr/menu">식당 식단 안내</a></li>
+    </ul>
+  </div>
+</body>
+</html>
