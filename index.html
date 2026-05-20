@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>사이트 목록</title>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <h1>사이트 목록</h1>
+
+  <!-- 로그인 폼 -->
+  <div id="login-area">
+    <form id="login-form">
+      <input type="text" id="username" placeholder="아이디" />
+      <input type="password" id="password" placeholder="패스워드" />
+      <button type="submit">로그인</button>
+    </form>
+  </div>
+
+  <!-- 사이트 목록 테이블 -->
+  <table border="1" id="site-table">
+    <thead>
+      <tr>
+        <th>이름</th>
+        <th>주소</th>
+        <th id="admin-header" style="display:none;">관리</th>
+      </tr>
+    </thead>
+    <tbody id="site-list"></tbody>
+  </table>
+
+  <!-- 관리자 메뉴 (로그인 후 표시) -->
+  <div id="admin-area" style="display:none;">
+    <h2>사이트 추가</h2>
+    <form id="add-site-form">
+      <input type="text" id="siteName" placeholder="사이트 이름" />
+      <input type="url" id="siteUrl" placeholder="사이트 주소" />
+      <button type="submit">추가</button>
+    </form>
+  </div>
+</body>
+</html>
