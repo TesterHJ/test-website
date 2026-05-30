@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>사이트 모음</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- FontAwesome 최신 CDN (7.2.0) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.2.0/css/all.min.css">
+</head>
+<body>
+  <!-- 로그인 버튼 -->
+  <div class="login-buttons">
+    <button id="open-login">로그인</button>
+    <button id="logout-btn" style="display:none;">로그아웃</button>
+  </div>
+
+  <!-- 메인 섹션 -->
+  <div class="main-section">
+    <h1>사이트 모음</h1>
+    <div class="category-boxes">
+      <div id="school-sites" class="category-card">학교 사이트</div>
+      <div id="tool-sites" class="category-card">도구 사이트</div>
+    </div>
+  </div>
+
+  <!-- 로그인 모달 -->
+  <div id="login-modal">
+    <div id="login-box">
+      <form id="login-form">
+        <input type="text" id="username" placeholder="아이디" required>
+        <input type="password" id="password" placeholder="비밀번호" required>
+        <button type="submit">로그인</button>
+        <button type="button" id="close-login">닫기</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 관리자 영역 -->
+  <div id="admin-area" style="display:none;">
+    <h2>사이트 추가</h2>
+    <form id="add-site-form">
+      <input type="text" id="siteName" placeholder="사이트 이름" required>
+      <input type="text" id="siteUrl" placeholder="사이트 주소" required>
+      <select id="siteCategory" required>
+        <option value="school">학교</option>
+        <option value="tool">도구</option>
+      </select>
+      <input type="text" id="siteIcon" placeholder="FontAwesome 아이콘 클래스명 (예: fa-solid fa-school)" required>
+      <button type="submit">추가</button>
+    </form>
+  </div>
+
+  <!-- 사이트 모달 -->
+  <div id="site-modal">
+    <div id="site-modal-box">
+      <h2 id="modal-title"></h2>
+      <div id="site-icons"></div>
+      <button id="close-site-modal">닫기</button>
+    </div>
+  </div>
+
+  <!-- 푸터 -->
+  <div class="footer-info">
+    © 2026 hj 프로젝트
+  </div>
+
+  <!-- script.js 연결 -->
+  <script src="script.js"></script>
+</body>
+</html>
