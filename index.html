@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>사이트 목록</title>
+  <!-- 외부 CSS 파일 연결 -->
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- 메인 섹션 (배경 이미지 적용) -->
+  <div class="main-section">
+    <h1>사이트 목록</h1>
+
+    <!-- 로그인/로그아웃 버튼 -->
+    <div class="login-buttons">
+      <button id="open-login">관리자 로그인</button>
+      <button id="logout-btn" style="display:none;">로그아웃</button>
+    </div>
+
+    <!-- 로그인 모달 -->
+    <div id="login-modal">
+      <div id="login-box">
+        <h2>관리자 로그인</h2>
+        <form id="login-form">
+          <input type="text" id="username" placeholder="아이디" /><br>
+          <input type="password" id="password" placeholder="패스워드" /><br>
+          <button type="submit">로그인</button>
+          <button type="button" id="close-login">닫기</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- 사이트 목록 테이블 -->
+    <table id="site-table">
+      <thead>
+        <tr>
+          <th>이름</th>
+          <th>주소</th>
+          <th id="admin-header" style="display:none;">관리</th>
+        </tr>
+      </thead>
+      <tbody id="site-list"></tbody>
+    </table>
+
+    <!-- 관리자 메뉴 -->
+    <div id="admin-area" style="display:none;">
+      <h2>사이트 추가</h2>
+      <form id="add-site-form">
+        <input type="text" id="siteName" placeholder="사이트 이름" />
+        <input type="url" id="siteUrl" placeholder="사이트 주소" />
+        <button type="submit">추가</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 푸터 -->
+  <footer class="footer-info">
+    <p>학번 : </p>
+    <p>이름 : </p>
+    <p>과제 제출</p>
+  </footer>
+</body>
+</html>
