@@ -1,0 +1,101 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+.main-section {
+  min-height: 100vh;
+  background-image: url("img/bg2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 버튼 스타일 */
+#open-login, #logout-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#open-login {
+  background: #4CAF50;
+  color: white;
+}
+#open-login:hover {
+  background: #45a049;
+}
+#logout-btn {
+  background: #f44336;
+  color: white;
+  display: none;
+}
+#logout-btn:hover {
+  background: #d32f2f;
+}
+
+/* 모달 배경 */
+#login-modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+/* 모달 박스 */
+#login-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  text-align: center;
+  animation: slideDown 0.4s ease forwards;
+}
+
+/* 입력창 */
+#login-box input {
+  width: 90%;
+  padding: 8px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* 테이블 */
+#site-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px;
+}
+#site-table th, #site-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+#site-table th {
+  background-color: #f2f2f2;
+}
+
+/* footer */
+.footer-info {
+    text-align: right;
+    padding: 20px;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    background-color: #404040;
+}
+
+/* 애니메이션 */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
