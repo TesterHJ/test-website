@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>사이트 목록</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- 로그인/로그아웃 버튼 -->
+  <div class="login-buttons">
+    <button id="open-login">관리자 로그인</button>
+    <button id="logout-btn" style="display:none;">로그아웃</button>
+  </div>
+
+  <!-- 메인 섹션 -->
+  <div class="main-section">
+    <h1>사이트 목록</h1>
+
+    <!-- 카테고리 카드 -->
+    <div class="category-boxes">
+      <div class="category-card" id="school-sites">
+        <h2>학교 사이트</h2>
+      </div>
+      <div class="category-card" id="tool-sites">
+        <h2>도구 사이트</h2>
+      </div>
+    </div>
+
+    <!-- 관리자 메뉴 -->
+    <div id="admin-area" style="display:none;">
+      <h2>사이트 추가</h2>
+      <form id="add-site-form">
+        <input type="text" id="siteName" placeholder="사이트 이름" />
+        <input type="url" id="siteUrl" placeholder="사이트 주소" />
+        <select id="siteCategory" required>
+          <option value="school">학교</option>
+          <option value="tool">도구</option>
+        </select>
+        <input type="text" id="siteIcon" placeholder="FontAwesome 아이콘 클래스명 (예: fa-solid fa-school)" required>
+        <button type="submit">추가</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 로그인 모달 -->
+  <div id="login-modal">
+    <div id="login-box">
+      <h2>관리자 로그인</h2>
+      <form id="login-form">
+        <input type="text" id="username" placeholder="아이디" /><br>
+        <input type="password" id="password" placeholder="패스워드" /><br>
+        <button type="submit">로그인</button>
+        <button type="button" id="close-login">닫기</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 사이트 선택 모달 -->
+  <div id="site-modal">
+    <div id="site-modal-box">
+      <h2 id="modal-title"></h2>
+      <div id="site-icons"></div>
+      <button id="close-site-modal">닫기</button>
+    </div>
+  </div>
+
+  <!-- 푸터 -->
+  <footer class="footer-info">
+    <p>학번 : </p>
+    <p>이름 : </p>
+    <p>과제 제출</p>
+  </footer>
+</body>
+</html>
