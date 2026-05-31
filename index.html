@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>사이트 목록 & 요청 시스템</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- 메인 섹션 -->
+  <div class="main-section">
+    <h1>사이트 모음</h1>
+    <div class="category-boxes">
+      <!-- 학교 사이트 -->
+      <div class="category-card" data-category="school">
+        <h2><i class="fa-solid fa-school"></i> 학교 사이트</h2>
+        <button class="request-btn" onclick="openRequestForm('school')">
+          학교 사이트 요청하기
+        </button>
+      </div>
+
+      <!-- 도구 사이트 -->
+      <div class="category-card" data-category="tool">
+        <h2><i class="fa-solid fa-wrench"></i> 도구 사이트</h2>
+        <button class="request-btn" onclick="openRequestForm('tool')">
+          도구 사이트 요청하기
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 사이트 요청 폼 -->
+  <div id="request-area" style="display:none;">
+    <h2>새로운 사이트 요청</h2>
+    <form id="request-site-form">
+      <input type="text" id="siteRequestName" placeholder="사이트 이름" required>
+      <textarea id="siteRequestReason" placeholder="요청 이유" required></textarea>
+      <select id="siteRequestCategory" required>
+        <option value="">카테고리 선택</option>
+        <option value="school">학교</option>
+        <option value="tool">도구</option>
+      </select>
+      <input type="url" id="siteRequestUrl" placeholder="사이트 URL" required>
+      <button type="submit">요청하기</button>
+    </form>
+  </div>
+
+  <!-- 관리자 요청 목록 -->
+  <div id="admin-requests">
+    <h2>사용자 요청 목록</h2>
+    <div id="request-list"></div>
+  </div>
+
+  <!-- 모달 -->
+  <div id="school-modal" class="site-modal">
+    <div id="school-modal-box">
+      <h2><i class="fa-solid fa-school"></i> 학교 사이트</h2>
+      <div id="school-sites"></div>
+      <button onclick="closeModal('school')">닫기</button>
+    </div>
+  </div>
+
+  <div id="tool-modal" class="site-modal">
+    <div id="tool-modal-box">
+      <h2><i class="fa-solid fa-wrench"></i> 도구 사이트</h2>
+      <div id="tool-sites"></div>
+      <button onclick="closeModal('tool')">닫기</button>
+    </div>
+  </div>
+</body>
+</html>
