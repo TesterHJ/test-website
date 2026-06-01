@@ -4,7 +4,7 @@ html, body {
   font-family: 'Segoe UI', Arial, sans-serif;
   background-color: #f9f9f9;
   color: #333;
-  background-image: url("img/bg.jpg"); /* 원하는 이미지 경로 */
+  background-image: url("img/bg2.jpg"); /* 원하는 이미지 경로 */
   background-size: cover;       /* 화면에 꽉 차게 */
   background-position: center;  /* 중앙 정렬 */
   background-repeat: no-repeat; /* 반복 없음 */
