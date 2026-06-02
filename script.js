@@ -232,7 +232,7 @@ const requestsTableBody = document.querySelector("#requests-table tbody");
 const closeRequestsBtn = document.getElementById("close-requests");
 
 let currentPage = 1;
-const pageSize = 10;
+const pageSize = 5;
 
 async function loadRequests(page = 1) {
   const res = await fetch(`/api/getRequests?page=${page}&limit=${pageSize}`);
